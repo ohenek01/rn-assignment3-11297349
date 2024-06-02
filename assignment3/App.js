@@ -5,7 +5,8 @@ import Icon from 'react-native-vector-icons/Feather';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container} showsVerticalScrollIndicator={false}>
+    <View style={{paddingBottom: 5}}>
       <Text style={styles.header}>Hello, Guys</Text>
       <Text style={styles.headerParagraph}>14 Tasks today</Text>
       <Image source={require('./assets/Profile Image.png')} style={styles.profile}/>
@@ -14,7 +15,7 @@ export default function App() {
         <TextInput style={styles.searchBar} placeholder='Search'/>
         <Icon name='search' style={styles.searchIcon}/>
         <Pressable onPress={() => console.log('Pressed')}>
-          <Icon name='filter' size={50} style={styles.filter}/>
+          <Icon name='filter' size={40} style={styles.filter}/>
         </Pressable>
       </View>
 
@@ -71,16 +72,34 @@ export default function App() {
         </View>
        </ScrollView>  
       </View>
-    
+        <Text style={{fontWeight: 'bold', fontSize: 28, marginTop: 40, marginLeft: 15}}>Ongoing Task</Text>
+        <FlatList style={{marginTop: 10}}
+          data={[
+            {key: '1', text: 'Web Development'}, {key: '2', text: 'Mobile Development'},
+            {key: '3', text: 'Data Science'}, {key: '4', text: 'Statistics'},
+            {key: '5', text: 'Machine Learning'}, {key: '6', text: 'Calculus'},
+            {key: '7', text: 'Algebra'}, {key: '8', text: 'Business Math'},
+            {key: '9', text: 'English'}, {key: '10', text:'Deep Learning'},
+            {key: '11', text: 'Python'}, {key: '12', text: 'Sit Ups'},
+            {key: '13', text: 'Push Ups'}, {key: '14', text: 'Software Engineering'},
+            {key: '15', text: 'Java'},
+          ]}
+          renderItem={({item}) => (
+          <View style={styles.ongoingTasks}>
+            <Text style={styles.taskList}>{item.text}</Text>
+          </View>
+        )}
+        />
+      </View>
     
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: 'antiquewhite',
     alignItems: 'center',
     justifyContent: 'center',
@@ -109,7 +128,7 @@ const styles = StyleSheet.create({
     top: 130,
     left: 30,
     backgroundColor: 'white',
-    width: 270,
+    width: 300,
     height: 40,
     borderRadius: 10
   },
@@ -140,7 +159,7 @@ const styles = StyleSheet.create({
   },
   categoryContent:{
     maxHeight: 200,
-    marginTop: -40
+    marginTop: 250,
   },
   categoryContent1:{
     backgroundColor: 'white',
@@ -164,4 +183,25 @@ const styles = StyleSheet.create({
     left: -51,
   },
   
+  ongoingTasks:{
+  backgroundColor: 'white',
+  padding: 10,
+  marginVertical: 5,
+  borderRadius: 20,
+  alignItems: 'center',
+  justifyContent: 'center',
+  elevation: 2,
+  marginLeft: 15,
+  marginRight: 15,
+  },
+
+  taskList:{
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    width: 350,
+    height: 100
+  },
 });
+

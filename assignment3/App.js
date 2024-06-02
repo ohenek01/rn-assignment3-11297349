@@ -43,7 +43,7 @@ export default function App() {
         <View style={styles.categoryContent1}>
         <Text style={styles.categoryText1}>Cook</Text>
         <Text style={styles.categoryText2}>5 Tasks</Text>
-          <Image source={require('./assets/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA5L2thdGV2NjQ0N18zZF9pbGx1c3RyYXRpb25fb2ZfYW5fYXNpYW5fd29tYW5fY29va2luZ19mdWxsX2JvZHlfc184M2I4MzAwMy1hYmRlLTQ1YjUtYTk3MC01MmI0NmJiNmY5N2IucG5n (1).jpeg')}/>
+          <Image source={require('./assets/cHJpdmF0ZS9 (1).jpeg')}/>
         </View>
 
         <View style={styles.categoryContent1}>
